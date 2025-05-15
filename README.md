@@ -48,5 +48,5 @@ Compatível com os seguintes sistemas gerenciadores de banco de dados:
 
 ### 1. Clone o repositório
 ```bash
-git clone https://github.com/seu-usuario/catalogo-jogos.git
-cd catalogo-jogos
+git clone https://github.com/seu-usuario/CodeWare_Store.git
+cd CodeWare_Store
