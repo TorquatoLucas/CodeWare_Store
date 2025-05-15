@@ -1,40 +1,52 @@
-🎮 Catálogo de Jogos - Sistema Web
-Este projeto consiste em um sistema web desenvolvido para uma empresa de jogos, que permite o cadastro, visualização e compra de jogos online.
+# 🎮 Catálogo de Jogos - Sistema Web
 
-O sistema possui duas principais funcionalidades:
+Este projeto consiste em um sistema web desenvolvido para uma empresa de jogos, que permite o **cadastro, visualização e compra de jogos online**.
 
-Catálogo Público: Qualquer usuário, mesmo sem login, pode visualizar os jogos disponíveis no catálogo.
+## 🔑 Funcionalidades Principais
 
-Área de Usuário: Após realizar login, o usuário poderá comprar jogos e acessar sua biblioteca pessoal de jogos adquiridos.
+- **Catálogo Público:**  
+  Qualquer usuário, mesmo sem login, pode visualizar os jogos disponíveis no catálogo.
 
-🚀 Tecnologias Utilizadas
-🖥️ Frontend
-HTML5
+- **Área de Usuário:**  
+  Após realizar login, o usuário pode comprar jogos e acessar sua biblioteca pessoal de jogos adquiridos.
 
-CSS3
+---
 
-JavaScript (ES6+)
+## 🚀 Tecnologias Utilizadas
 
-🛠️ Backend
-A aplicação pode ser implementada com Java ou Node.js, conforme as necessidades do time.
+### 🖥️ Frontend
+- HTML5  
+- CSS3  
+- JavaScript (ES6+)
 
-Java versão 17+
-ou
+### 🛠️ Backend
+A aplicação pode ser implementada com uma das seguintes tecnologias, conforme as necessidades do time:
 
-Node.js versão 18+
+- **Java** versão 17+  
+  ou  
+- **Node.js** versão 18+
 
-🗃️ Banco de Dados
-O sistema é compatível com os dois SGBDs abaixo:
+### 🗃️ Banco de Dados
+Compatível com os seguintes sistemas gerenciadores de banco de dados:
 
-PostgreSQL versão 15+
-ou
+- **PostgreSQL** versão 15+  
+  ou  
+- **MySQL** versão 8+
 
-MySQL versão 8+
+### 🌐 Servidor de Desenvolvimento
+- **Servidor HTTP Local:** Node.js ou Tomcat (para Java)
+- **Servidor Web:** Utilização de ferramentas integradas à IDE e ao framework escolhido
 
-🌐 Servidor de Desenvolvimento
-Servidor HTTP Local (Node.js ou Tomcat para Java)
+### 💻 IDE Recomendado
+- **Visual Studio Code** versão 1.80+
 
-Servidor Web: Utilização de ferramentas de desenvolvimento integradas à IDE e ao framework adotado.
+---
 
-💻 IDE
-Visual Studio Code versão 1.80+
+## 📦 Instalação e Execução
+
+> ⚠️ As instruções abaixo variam conforme a tecnologia escolhida (Java ou Node.js). Escolha a que se aplica ao seu caso.
+
+### 1. Clone o repositório
+```bash
+git clone https://github.com/seu-usuario/catalogo-jogos.git
+cd catalogo-jogos
