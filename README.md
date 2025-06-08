@@ -32,7 +32,7 @@ Compatível com os seguintes sistemas gerenciadores de banco de dados:
 - **MySQL** versão 8+
 
 ### 🌐 Servidor de Desenvolvimento
-- **Servidor HTTP Local:** Tomcat
+- **Servidor HTTP Local:** Tomcat versão 11.0.7+
 
 ### 💻 IDE Recomendado
 - **Visual Studio Code** versão 1.80+
