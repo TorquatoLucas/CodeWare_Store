@@ -1,6 +1,8 @@
 # 🎮 Catálogo de Jogos - Sistema Web
 
-Este projeto consiste em um sistema web desenvolvido para uma empresa de jogos, que permite o **cadastro, visualização e compra de jogos online**.
+  Em nosso problema hipotético a empresa Rockstar Games desenvolvedora de jogos contratou nossa empresa CodeWare para criar uma loja online para seus jogos. A empresa precisa de um sistema que permita a venda de seus jogos distribuídos em um catálogo, faça cadastro de seus clientes/usuários, e armazene os jogos comprados por estes.
+  
+  Este projeto consiste em um sistema web desenvolvido para uma empresa de jogos, que permite a empresa cadastrar seus jogos no catálogo, e permita visualização para todos usuários do catálogo mesmo sem fazer login. E quando este fazer login, permita a compra de seus jogos, e acesso a biblioteca de jogos comprados.
 
 ## 🔑 Funcionalidades Principais
 
