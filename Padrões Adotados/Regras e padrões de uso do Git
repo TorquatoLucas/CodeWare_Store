@@ -3,7 +3,7 @@
 
     main - Contendo o código estável e a parte atualizada da documentação.
 
-    dev -	Onde as novas funcionalidades estão sendo desenvolvidas.
+    dev - Onde as novas funcionalidades estão sendo desenvolvidas.
 
     bugfix - Para correção de erros no código e incoerências na documentação.
 
