@@ -24,6 +24,18 @@
 
       test: testes adicionados/ajustados
 
-3º - 
+3º - Organização das Pastas
+  Os arquivos devem seguir a seguinte hierarquia:
+
+/CodeWare_Store
+│
+├── /Documentos       # Documentação (regras, relatórios, etc.)
+├── /src              # Código-fonte do projeto
+│   ├── /backend      # Lógica de servidor/API
+│   └── /frontend     # Interface do usuário
+│
+├── .gitignore        # Arquivo de exclusões do Git
+├── README.md         # Documentação inicial do projeto
+
 
 
