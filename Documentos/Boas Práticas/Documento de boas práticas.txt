@@ -1,0 +1,33 @@
+﻿1. Comentários e Documentação 
+Todo método ou função deve ter um comentário explicando sua responsabilidade em português
+Comentários devem ser usados somente para explicar lógicas complexas, evitando comentar o óbvio.
+Criar e manter atualizada a documentação no diretório /docs.
+
+
+2. Padrão de Notação 
+Seguir as convenções de nomenclatura da linguagem:
+   * Java: camelCase para variáveis e métodos, PascalCase para classes
+
+   * HTML/CSS/JS: kebab-case para arquivos, camelCase em JavaScript
+Nomes de variáveis e funções devem ser descritivos e claros.
+
+
+3. Princípio da Responsabilidade Única (SRP – SOLID)
+Cada classe ou função deve ter apenas uma responsabilidade bem definida.
+Evitar "classes faz-tudo" (com muitas responsabilidades misturadas).
+
+
+4. Código Limpo (Clean Code)
+Métodos curtos (máximo 20–30 linhas).
+Evitar código duplicado.
+Funções devem ter nomes que revelam intenção de fazer apenas uma coisa.
+
+
+5. Tratamento de Erros e Validações
+Sempre validar entradas do usuário e tratar exceções adequadamente.
+Evitar mensagens de erro genéricas em produção.
+
+
+6. Reutilização e Modularização de Código
+Sempre que possível, evitar código repetido.
+Criar funções/métodos reutilizáveis e quebrar lógicas grandes em partes menores.
