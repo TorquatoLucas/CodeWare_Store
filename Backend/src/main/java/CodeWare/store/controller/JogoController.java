@@ -1,7 +1,6 @@
 package CodeWare.store.controller;
 
 import java.util.List;
-import java.util.UUID;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -40,7 +39,7 @@ public class JogoController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteJogo(@PathVariable UUID id){
+    public ResponseEntity<?> deleteJogo(@PathVariable Integer id){
         if(jogoService.deleteJogo(id)){
             return ResponseEntity.ok().build();
         }else{
@@ -49,7 +48,7 @@ public class JogoController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Jogo> editJogo(@PathVariable UUID id, @Valid @RequestBody JogoDto jogoDto){
+    public ResponseEntity<Jogo> editJogo(@PathVariable Integer id, @Valid @RequestBody JogoDto jogoDto){
         return ResponseEntity.ok(jogoService.updateJogo(id, jogoDto));
     }
 

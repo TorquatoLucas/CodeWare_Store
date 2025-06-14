@@ -1,7 +1,6 @@
 package CodeWare.store.service;
 
 import java.util.List;
-import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,7 +32,7 @@ public class JogoService {
     }
 
     @Transactional
-    public boolean deleteJogo(UUID id){
+    public boolean deleteJogo(Integer id){
         if(jogoRepository.existsById(id)){
             jogoRepository.deleteById(id);
             return true;
@@ -43,7 +42,7 @@ public class JogoService {
     }
 
     @Transactional
-    public Jogo updateJogo(UUID id, JogoDto jogoDto) {
+    public Jogo updateJogo(Integer id, JogoDto jogoDto) {
         // Verifica se o jogo existe
         Jogo jogo = jogoRepository.findById(id)
             .orElseThrow(() -> new IllegalArgumentException("Jogo com ID " + id + " não encontrado"));

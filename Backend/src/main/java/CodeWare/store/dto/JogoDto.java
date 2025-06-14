@@ -1,10 +1,9 @@
 package CodeWare.store.dto;
 
-import java.util.UUID;
 
 public record JogoDto(
 
-    UUID id, 
+    Integer id, 
     
     String descricao, 
     

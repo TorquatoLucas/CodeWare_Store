@@ -10,7 +10,6 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.UUID;
 
 @Getter
 @Setter
@@ -23,9 +22,9 @@ public class Jogo implements Serializable {
     // É um identificador de versão para controle de compatibilidade durante a serialização/desserialização
     private static final long serialVersionUID = 1L;
 
-    @Id             
-    @GeneratedValue(strategy = GenerationType.AUTO) // Tipo de geração automática
-    private UUID id;                                // UUID: Identificador único universal
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;                               
 
     @Column(nullable = false, unique = true)
     private String nome;

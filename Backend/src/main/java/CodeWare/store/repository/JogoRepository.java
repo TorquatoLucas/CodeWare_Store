@@ -1,16 +1,15 @@
 package CodeWare.store.repository;
 
 import java.util.Optional;
-import java.util.UUID;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import CodeWare.store.model.Jogo;
 
-public interface JogoRepository extends JpaRepository<Jogo,UUID> {
+public interface JogoRepository extends JpaRepository<Jogo,Integer> {
 
     Jogo findJogoByNome(String nome);
 
-    Optional<Jogo> findById(UUID id);
+    Optional<Jogo> findById(Integer id);
 
 }
