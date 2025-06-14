@@ -1,1 +1,29 @@
+1º - Estrutura de branches
+  O projeto terá 3 branches:
+
+    main - Contendo o código estável e a parte atualizada da documentação.
+
+    dev - Onde as novas funcionalidades estão sendo desenvolvidas.
+
+    bugfix - Para correção de erros no código e incoerências na documentação.
+
+2º - Padrão de Commits
+  Os commits deve conter um título e uma descrição.
+
+    Título - Deve condizer com a alteração do commit.
+
+    Descrição - Deve conter um resumo da mudança e uma tag, como as de exemplo:
+      
+      feat: nova funcionalidade
+
+      fix: correção de bug
+
+      docs: documentação
+
+      refactor: refatoração de código
+
+      test: testes adicionados/ajustados
+
+3º - 
+
 
