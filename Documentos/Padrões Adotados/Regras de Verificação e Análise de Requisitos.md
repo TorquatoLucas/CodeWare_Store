@@ -16,6 +16,6 @@ As regras a ser seguidas pela especificação de requisitos serão:
 
 1. Definir um requisito por vez \- Os requisitos devem ser atômicos, representando  apenas uma funcionalidade ou qualidade do software.  
 2. Os requisitos devem seguir um vocabulário fechado \- Os requisitos deverão seguir o glossário definido para cada termo.  
-3. Os requisitos devem ser concisos \- Os requisitos devem ser explicativos, evitando frases longas.  
+3. Os requisitos devem ser concisos \- Os requisitos devem ser explicativos, evitando frases longas (com mais de 200 caractéres).  
 4. Os requisitos devem ser agrupados corretamente \- Os requisitos relacionados devem estar próximos para facilitar o entendimento do leitor.
 
