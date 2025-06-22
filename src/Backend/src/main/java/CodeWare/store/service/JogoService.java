@@ -31,6 +31,11 @@ public class JogoService {
         return jogoRepository.findAll();
     }
 
+    @Transactional(readOnly = true)
+    public Jogo listJogo(Integer id){
+        return jogoRepository.findById(id).get();
+    }
+
     @Transactional
     public boolean deleteJogo(Integer id){
         if(jogoRepository.existsById(id)){

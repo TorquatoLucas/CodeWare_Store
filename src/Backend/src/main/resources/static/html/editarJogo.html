@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Editar Jogo</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/cadastrar.css">
+</head>
+
+<body>
+
+  <div class="cadastro-container">
+    <h2>Editar Jogo</h2>
+
+    <div class="form-group">
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" name="nome">
+    </div>
+
+    <div class="form-group">
+      <label for="descricao">Descrição</label>
+      <input type="text" id="descricao" name="descricao">
+    </div>
+
+    <div class="form-group">
+      <label for="lancamento">Lançamento</label>
+      <input type="date" id="lancamento" name="lancamento">
+    </div>
+
+    <div class="form-group">
+      <label for="preco">Preço</label>
+      <input type="text" id="preco" name="preco">
+    </div>
+
+    <div class="form-group">
+      <label for="capa_diretorio">Capa</label>
+      <input type="text" id="capa_diretorio" name="capa_diretorio">
+    </div>
+
+    <div class="form-group">
+      <label for="estudio">Estúdio</label>
+      <input type="text" id="estudio" name="estudio">
+    </div>
+
+    <div class="botoes">
+      <button type="submit" id="btnEditar">Salvar</button>
+      <button type="button" onclick="window.location.href ='gerenciarJogos.html'">Cancelar</button>
+    </div>
+  </div>
+
+  <script src="../js/editarJogo.js"></script>
+
+</body>
+</html>

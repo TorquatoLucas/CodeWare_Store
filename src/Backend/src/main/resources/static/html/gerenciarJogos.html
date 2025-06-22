@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rockstar Games - Gerenciamento</title>
+    <link rel="stylesheet" href="../css/home.css">
+    <style>
+        /* Adicionei um estilo rápido para os botões amarelos da tabela/rodapé,
+           já que o CSS fornecido não os cobre especificamente.
+           Você pode ajustar isso ou integrar com sua classe .active se preferir. */
+        .btn-action-yellow {
+            background-color: #FFC107;
+            color: #161616;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .btn-action-yellow:hover {
+            background-color: #e0a800;
+        }
+
+        /* Estilo para os botões de ícone no cabeçalho da tabela */
+        .table-header-actions button {
+            background: transparent;
+            border: none;
+            color: #AAAAAA;
+            font-size: 1.25rem; /* Ajuste conforme necessário */
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        .table-header-actions button:hover {
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="i_home">
+        <aside class="sidebar">
+            <div class="logo-container">
+                <img src="../images/Rockstar_logo.png" alt="Rockstar Games Logo" class="logo">
+                <h1>Rockstar Games</h1>
+                <p class="user-text">Usuário</p>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <button class="nav-button">
+                            <span>🏠</span> <span class="nav-text-label">Home</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="nav-button active">
+                            <span>📊</span> <span class="nav-text-label">Gerenciamento</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="nav-button">
+                            <span>⚙️</span> <span class="nav-text-label">Configurações</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+            <div class="login-section">
+                <button class="nav-button">
+                    <span>👤</span> <span class="nav-text-label">Login</span>
+                    <span class="logout-icon">➔</span> </button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="search-container">
+                    <span class="search-icon">🔍</span> <input type="search" class="search-input" placeholder="Busca">
+                </div>
+                <div class="top-bar-right">
+                    <button class="notification-button" title="Notificações">
+                        <span class="notification-icon">🔔</span> </button>
+                </div>
+            </header>
+
+            <section class="management-table-container" style="padding: 20px; overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; color: #fff;">
+                    <thead>
+                        <tr style="background-color: #252525;">
+                            <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #333;">NOME</th>
+                            <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #333;">DESCRIÇÃO</th>
+                            <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #333;">LANÇAMENTO</th>
+                            <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #333;">PREÇO</th>
+                            <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #333;">CAPA</th>
+                            <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #333;">ESTÚDIO</th>
+                            <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #333;">EDITAR</th>
+                            <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #333;">EXCLUIR</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-jogos">
+                    </tbody>
+                </table>
+            </section>
+
+            <footer class="management-actions" style="padding: 20px; display: flex; justify-content: space-between; align-items: center; margin-top: auto; gap: 15px;">
+                <button class="btn-action-yellow" style="flex-grow: 1;" onclick="window.location.href='cadastrarJogo.html'">Adicionar novo jogo</button>
+                <button class="btn-action-yellow" style="flex-grow: 1;" onclick="window.location.href='home.html'">Sair</button>
+            </footer>
+
+        </main>
+    </div>
+
+    <script src="../js/listarJogos.js"></script>
+</body>
+</html>

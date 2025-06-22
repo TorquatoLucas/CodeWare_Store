@@ -1,0 +1,537 @@
+/* --- Reset Básico e Configurações Globais --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif; /* Escolha uma fonte adequada */
+    color: #fff; /* Cor de texto padrão, se a maioria for branca */
+    background-color: #0A0A0A; /* Aplicar o fundo principal ao body */
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: inherit;
+    color: inherit;
+}
+
+/* --- Contêiner Principal --- */
+.i_home {
+    display: flex;
+    max-width: 1440px; /* Largura máxima do design original */
+    min-height: 100vh; /* Ocupa pelo menos toda a altura da tela */
+    background: #161616;
+    margin: 0 auto; /* Centraliza se a tela for maior que max-width */
+    /* overflow: hidden; /* Removido ou ajustado para permitir scroll em layouts menores se necessário */
+}
+
+/* --- Sidebar --- */
+.sidebar {
+    width: 250px; /* Largura base da sidebar */
+    background: #101010;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0; /* Impede que a sidebar encolha além do desejado */
+    /* height: 100%; */ /* A altura será definida pelo flex container .i_home */
+}
+
+.logo-container {
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.logo-container .logo {
+    width: 60px;
+    background-color: #FFC107;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.logo-container h1 {
+    color: #FFFFFF;
+    font-size: 1.5rem; /* 24px */
+    margin: 0 0 5px 0;
+    font-weight: bold;
+}
+
+.logo-container .user-text {
+    color: #AAAAAA;
+    font-size: 0.875rem; /* 14px */
+    margin: 0;
+}
+
+.main-nav ul {
+    /* padding: 0;  Já está no reset */
+    /* margin: 0; Já está no reset */
+}
+
+.main-nav li {
+    margin-bottom: 10px;
+}
+
+.nav-button {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: transparent;
+    color: #AAAAAA;
+    border-radius: 5px;
+    font-size: 1rem; /* 16px */
+    width: 100%;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-button span:first-child { /* Ícone */
+    margin-right: 10px;
+    font-size: 1.125rem; /* 18px */
+}
+
+.nav-button.active {
+    background-color: #FFC107;
+    color: #161616;
+}
+
+.nav-button.active span:first-child {
+    color: #161616;
+}
+
+.nav-button:hover:not(.active) {
+    background-color: #222222;
+    color: #FFFFFF;
+}
+
+.login-section {
+    margin-top: auto; /* Empurra para o final da sidebar */
+    padding-top: 20px; /* Adiciona um espaço acima do login, caso a sidebar fique curta */
+}
+
+.login-section .nav-button {
+    justify-content: space-between;
+}
+
+.logout-icon {
+    font-size: 1.125rem; /* 18px */
+}
+
+/* --- Main Content --- */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    /* padding: 0; -- Não é necessário aqui, será controlado por top-bar e games-showcase */
+    overflow-x: hidden; /* Para evitar scroll horizontal inesperado no conteúdo principal */
+}
+
+/* --- Top Bar --- */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px; /* Ajustado para melhor responsividade inicial */
+    background-color: #161616;
+    border-bottom: 1px solid #282828;
+    min-height: 60px; /* Usar min-height em vez de height fixo */
+    flex-wrap: wrap; /* Permite que os itens quebrem linha */
+}
+
+.wishlist-button {
+    /* background-color: transparent; -- Já é padrão de button */
+    color: #FFFFFF;
+    /* border: none; -- Já é padrão de button */
+    font-size: 1rem; /* 16px */
+    /* cursor: pointer; -- Já é padrão de button */
+    display: flex;
+    align-items: center;
+    margin-right: 10px; /* Espaço para caso quebre linha perto da busca */
+}
+
+.wishlist-button .star-icon {
+    color: #FFC107;
+    margin-right: 8px;
+    font-size: 1.25rem; /* 20px */
+}
+
+.top-bar-right {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap; /* Para não quebrar entre busca e notificação */
+}
+
+.search-container {
+    position: relative;
+    margin-right: 15px; /* Ajustado */
+}
+
+.search-input {
+    background-color: #252525;
+    border: 1px solid #333333;
+    border-radius: 4px;
+    color: #FFFFFF;
+    padding: 8px 12px 8px 35px;
+    width: 200px; /* Largura base, pode ser ajustada em media queries */
+    font-size: 0.875rem; /* 14px */
+}
+
+.search-input::placeholder {
+    color: #888888;
+}
+
+.search-container .search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888888;
+    font-size: 1rem; /* 16px */
+}
+
+.notification-button {
+    /* background-color: transparent; -- Já é padrão de button */
+    /* border: none; -- Já é padrão de button */
+    /* cursor: pointer; -- Já é padrão de button */
+}
+
+.notification-button .notification-icon {
+    color: #AAAAAA;
+    font-size: 1.5rem; /* 24px */
+}
+
+/* --- Games Showcase --- */
+.games-showcase {
+    flex-grow: 1;
+    padding: 20px; /* Ajustado */
+    display: flex;
+    gap: 20px; /* Ajustado */
+    align-items: flex-start;
+    position: relative; /* Mantido para o .scroll-arrow-button */
+    flex-wrap: wrap; /* Essencial para responsividade dos cards */
+    justify-content: center; /* Centraliza os cards quando eles quebram linha */
+}
+
+.game-card {
+    background: linear-gradient(to bottom, #4A3500, #D4AF37 30%, #B8860B 70%, #4A3500);
+    background-color: #B8860B; /* Fallback */
+    border-radius: 10px;
+    width: 280px; /* Largura base do card */
+    /* Para garantir que não exceda a largura em telas muito pequenas, mesmo com o wrap: */
+    max-width: calc(100% - 10px); /* Ex: 100% menos algum espaço pequeno */
+    padding: 20px;
+    text-align: center;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    margin-bottom: 20px; /* Espaçamento quando os cards quebram para a próxima linha */
+}
+
+.game-card-image-placeholder {
+    width: 100px;
+    height: 80px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.controller-icon {
+    width: 60px;
+    /* height: auto; -- Já está no global img */
+    filter: invert(80%) sepia(10%) saturate(200%) hue-rotate(10deg) brightness(60%) contrast(100%);
+}
+
+.game-title {
+    font-size: 1.5rem; /* 24px */
+    margin: 0 0 15px 0;
+    color: #0A0A0A;
+    font-weight: bold;
+}
+
+.game-price {
+    font-size: 1.375rem; /* 22px */
+    color: #101010;
+    font-weight: bold;
+    margin: 10px 0 0 0;
+}
+
+.game-price-original {
+    font-size: 1rem; /* 16px */
+    color: #333333;
+    text-decoration: line-through;
+    margin: 10px 0 0 0;
+}
+
+.game-price-discounted {
+    font-size: 1.75rem; /* 28px */
+    color: #101010;
+    font-weight: bold;
+    margin: 5px 0 0 0;
+}
+
+.scroll-arrow-button {
+    background-color: rgba(40, 40, 40, 0.8);
+    border-radius: 50%;
+    width: 45px; /* Ajustado */
+    height: 45px; /* Ajustado */
+    font-size: 1.75rem; /* 28px */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.scroll-arrow-button.right-arrow {
+    right: 15px; /* Ajustado */
+}
+
+/* Ícones - Estilização base para emojis ou spans se usados como ícones */
+.nav-button span:first-child, .wishlist-button .star-icon,
+.search-container .search-icon, .notification-button .notification-icon,
+.scroll-arrow-button span {
+    /* Ajustes de alinhamento podem ser necessários dependendo da fonte/ícone real */
+    display: inline-block; /* Ajuda no alinhamento vertical */
+    vertical-align: middle;
+}
+
+
+/* --- Media Queries para Responsividade --- */
+
+/* Telas médias (tablets, desktops menores) - Ex: Abaixo de 1024px */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 220px; /* Sidebar um pouco mais estreita */
+    }
+
+    .logo-container h1 {
+        font-size: 1.35rem;
+    }
+
+    .nav-button {
+        font-size: 0.95rem;
+        padding: 9px 12px;
+    }
+    .nav-button span:first-child {
+        font-size: 1.05rem;
+    }
+
+    .game-card {
+        width: 250px; /* Cards um pouco menores */
+    }
+
+    .games-showcase {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .top-bar {
+        padding: 15px 20px;
+    }
+
+    .search-input {
+        width: 170px;
+    }
+}
+
+
+/* Telas pequenas (smartphones em paisagem, tablets em retrato) - Ex: Abaixo de 768px */
+@media (max-width: 768px) {
+    .i_home {
+        flex-direction: column; /* Empilha sidebar e main content */
+    }
+
+    .sidebar {
+        width: 100%; /* Sidebar ocupa toda a largura */
+        height: auto;
+        padding: 10px 15px; /* Ajusta padding para layout horizontal */
+        flex-direction: row; /* Itens da sidebar em linha */
+        align-items: center;
+        flex-wrap: wrap; /* Permite quebrar linha se necessário */
+        justify-content: space-between;
+        border-bottom: 1px solid #282828; /* Separador visual */
+    }
+
+    .logo-container {
+        margin-bottom: 0; /* Remove margem inferior no layout horizontal */
+        margin-right: auto; /* Empurra a navegação para a direita */
+    }
+     .logo-container .logo {
+        width: 50px;
+        margin-bottom: 0; /* Sem margem inferior para o logo */
+        margin-right: 10px; /* Espaço entre logo e título */
+        display: inline-block; /* Para alinhar com o título */
+        vertical-align: middle;
+    }
+    .logo-container h1 {
+        font-size: 1.2rem;
+        display: inline-block; /* Para alinhar com o logo */
+        vertical-align: middle;
+    }
+    .logo-container .user-text {
+        display: none; /* Ocultar "Usuário" para economizar espaço */
+    }
+
+    .main-nav {
+        order: 3; /* Pode ser usado para reordenar se necessário */
+        /* width: 100%; Se a navegação for para baixo do login */
+        /* margin-top: 10px; */
+    }
+    .main-nav ul {
+        display: flex;
+    }
+    .main-nav li {
+        margin-bottom: 0;
+        margin-left: 5px; /* Espaço entre botões */
+    }
+    .main-nav li:first-child {
+        margin-left: 0;
+    }
+
+    .nav-button {
+        padding: 8px 10px; /* Menor padding */
+    }
+    /* Opcional: Esconder texto e mostrar apenas ícones na nav da sidebar */
+    .main-nav .nav-button .nav-text-label { /* Supondo que você adicione <span class="nav-text-label">Home</span> */
+        display: none;
+    }
+    .main-nav .nav-button span:first-child {
+        margin-right: 0; /* Remove margem se o texto estiver oculto */
+    }
+
+
+    .login-section {
+        margin-top: 0;
+        padding-top: 0;
+        margin-left: 10px; /* Espaço se estiver ao lado da navegação */
+        order: 2; /* Pode colocar o login antes da nav principal se desejar */
+    }
+     /* Opcional: Esconder texto do login */
+    .login-section .nav-button .nav-text-label {
+        display: none;
+    }
+    .login-section .nav-button span:first-child { /* Ícone de login */
+         margin-right: 5px; /* Espaço para o ícone de logout */
+    }
+    .login-section .nav-button .logout-icon {
+        margin-left: 0;
+    }
+
+
+    .top-bar {
+        flex-direction: column;
+        align-items: stretch; /* Itens ocupam a largura total */
+        gap: 10px;
+        padding: 15px;
+    }
+    .top-bar-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .search-container {
+        flex-grow: 1; /* Busca ocupa mais espaço */
+        margin-right: 10px;
+    }
+    .search-input {
+        width: 100%; /* Busca ocupa toda a largura disponível no seu container */
+    }
+
+    .game-card {
+        width: calc(50% - 10px); /* Dois cards por linha, considerando o gap de 20px */
+    }
+
+    .scroll-arrow-button {
+        display: none; /* Ocultar setas em telas menores, priorizar scroll vertical */
+    }
+}
+
+/* Telas muito pequenas (smartphones em retrato) - Ex: Abaixo de 480px */
+@media (max-width: 480px) {
+    .sidebar {
+        padding: 10px;
+        justify-content: center; /* Centralizar se os itens quebrarem muito */
+    }
+    .logo-container {
+        margin-right: 0; /* Centralizar logo se a nav for para baixo */
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px; /* Espaço se a nav for para baixo */
+    }
+    .main-nav {
+        width: 100%;
+        justify-content: center;
+        order: 0; /* Reset order or adjust as needed */
+    }
+    .main-nav ul {
+        flex-wrap: wrap; /* Permite que os botões de navegação quebrem linha */
+        justify-content: center;
+    }
+    .main-nav li {
+        margin: 5px;
+    }
+    .login-section {
+        width: 100%;
+        justify-content: center;
+        margin-left: 0;
+        margin-top: 10px; /* Espaço se a nav estiver acima */
+    }
+
+    .wishlist-button {
+        font-size: 0.9rem;
+        justify-content: center; /* Centralizar o botão wishlist */
+        width: 100%;
+        margin-bottom: 10px; /* Se a busca for para baixo */
+    }
+    .top-bar-right {
+        flex-direction: column; /* Empilhar busca e notificação */
+        gap: 10px;
+    }
+    .search-container {
+        margin-right: 0;
+        width: 100%;
+    }
+    .notification-button {
+        align-self: flex-end; /* Alinhar notificação à direita se a busca ocupar 100% */
+    }
+
+
+    .game-card {
+        width: calc(100% - 10px); /* Um card por linha */
+        /* max-width: 300px; /* Opcional: limitar a largura máxima do card */
+        /* margin-left: auto; */
+        /* margin-right: auto; */
+    }
+
+    .game-title {
+        font-size: 1.3rem;
+    }
+    .game-price, .game-price-discounted {
+        font-size: 1.2rem;
+    }
+    .game-price-original {
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,109 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #000000;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #D4AC0D; /* Default text color for labels, can be overridden */
+}
+
+.cadastro-container {
+  background: #0D0D0D; /* Slightly off-black for the container if needed, or same as body */
+  padding: 30px 40px; /* Adjusted padding */
+  border-radius: 16px; /* Rounded corners for the main container */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content like the title */
+  width: 430px; /* Approximate width from image */
+  gap: 15px; /* Space between form groups */
+  border: 1px solid #2A2A2A; /* Subtle border for the container */
+}
+
+.cadastro-container h2 {
+  font-weight: 600;
+  font-size: 24px; /* Adjusted font size */
+  line-height: 29px;
+  color: #F5BF0F; /* Brighter yellow for the title */
+  margin-bottom: 25px; /* Space below the title */
+  text-align: center;
+}
+
+.form-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Space between label and input */
+}
+
+.form-group label {
+  align-self: flex-start;
+  font-weight: 500;
+  font-size: 14px;
+  color: #CDAB3A; /* Specific yellow for labels */
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #333333; /* Subtle border for inputs */
+  border-radius: 6px; /* Rounded corners for inputs */
+  font-size: 14px;
+  background: #1C1C1C; /* Dark background for inputs */
+  color: #E0E0E0; /* Light text color for input text */
+  font-family: 'Inter', sans-serif;
+}
+
+.form-group input::placeholder {
+  color: #6C6C6C; /* Placeholder text color */
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #F5BF0F; /* Highlight border on focus */
+  box-shadow: 0 0 0 2px rgba(245, 191, 15, 0.3); /* Subtle glow on focus */
+}
+
+.botoes {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Center buttons */
+  gap: 15px; /* Space between buttons */
+  margin-top: 20px; /* Space above the buttons */
+}
+
+.botoes button {
+  flex-grow: 1; /* Make buttons share width equally */
+  max-width: 180px; /* Max width per button */
+  background: #F5BF0F;
+  border-radius: 6px;
+  color: #000000; /* Black text for buttons */
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-family: 'Inter', sans-serif;
+}
+
+.botoes button:hover {
+  background: #e0ac00; /* Darker shade on hover */
+}
+
+.botoes button[type="button"] { /* Specific style for cancel button if needed, e.g., different background */
+  /* background: #333333; */
+  /* color: #F5BF0F; */
+  /* border: 1px solid #F5BF0F; */
+}
+
+.botoes button[type="button"]:hover {
+ /* background: #444444; */
+}

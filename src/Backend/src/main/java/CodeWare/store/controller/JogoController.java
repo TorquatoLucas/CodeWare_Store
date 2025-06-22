@@ -32,6 +32,11 @@ public class JogoController {
         return ResponseEntity.status(HttpStatus.CREATED).body(jogoService.saveJogo(jogoDto));
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Jogo> listJogo(@PathVariable Integer id){
+        return ResponseEntity.ok(jogoService.listJogo(id));
+    }
+
 
     @GetMapping
     public ResponseEntity<List<Jogo>> listJogos(){
