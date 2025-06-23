@@ -8,7 +8,7 @@ public class TesteController {
 
      @GetMapping("/")
     public String home() {
-        return "redirect:/html/gerenciarJogos.html";
+        return "redirect:/html/index.html";
     }
 
 }
