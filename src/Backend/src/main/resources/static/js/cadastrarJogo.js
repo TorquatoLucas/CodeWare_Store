@@ -33,7 +33,7 @@ const baseUrl = "http://localhost:8080/jogo";
         const descricao = document.getElementById("descricao").value;
         const lancamento = document.getElementById("lancamento").value;
         const preco = document.getElementById("preco").value;
-        //const capa_diretorio = document.getElementById("capa_diretorio").value;
+        // const capa_diretorio = document.getElementById("capa_diretorio").value;
         const estudio = document.getElementById("estudio").value;
         const imagem = document.getElementById("imagem").files[0];
 
