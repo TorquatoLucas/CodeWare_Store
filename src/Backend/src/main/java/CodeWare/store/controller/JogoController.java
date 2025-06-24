@@ -89,4 +89,9 @@ public class JogoController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao salvar imagem.");
         }
     }   
+
+    @GetMapping("/buscar/{nome}")
+    public ResponseEntity<List<Jogo>> buscarJogos(@PathVariable String nome){
+        return ResponseEntity.ok(jogoService.buscarJogos(nome));
+    }
 }

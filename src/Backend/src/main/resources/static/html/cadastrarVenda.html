@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro de Venda</title>
+
+    
+
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/cadastrar.css">
+</head>
+
+<body>
+
+  <div class="cadastro-container">
+    <h2>Cadastrar Venda</h2>
+    <form id="form-cadastrar">
+      <input type="hidden" id="venda-id" />
+
+      <div class="form-group">
+        <label for="data">Data</label>
+        <input type="date" id="data" name="data">
+      </div>
+
+      <div class="form-group">
+        <label for="clienteId">Cliente</label>
+        <select id="clienteId" name="clienteId">
+            <option value="">Selecione um cliente</option>
+        </select>
+        </div>
+
+        <div class="form-group">
+        <label for="jogoId">Jogo</label>
+        <select id="jogoId" name="jogoId">
+            <option value="">Selecione um jogo</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="valor">Valor</label>
+        <input type="text" id="valor" name="valor">
+      </div>
+
+    <div class="botoes">
+      <button type="submit" id="btnCadastrar">Cadastrar</button>
+      <button type="button" onclick="window.location.href ='gerenciarVendas.html'">Cancelar</button>
+    </div>
+  </div>
+
+  <script src="../js/cadastrarVenda.js"></script>
+  
+
+</body>
+</html>

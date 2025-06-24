@@ -1,11 +1,18 @@
 package CodeWare.store.model;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -40,11 +47,10 @@ public class Jogo implements Serializable {
     private String capa_diretorio;
 
 
-    // Será tirado de comentário quando implementar a tabela VENDA
-    /* 
+
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @OneToMany(mappedBy = "jogo",fetch = FetchType.LAZY,cascade = CascadeType.ALL,orphanRemoval = true)
     private Set<Venda> vendas = new HashSet<>(); 
-    */
+    
 
 }

@@ -51,14 +51,14 @@
                         </a>
                     </li>
                     <li>
-                        <button class="nav-button active">
+                        <a href="gerenciarJogos.html" class="nav-button">
                             <span>💻</span> <span class="nav-text-label">Gerenciar Jogos</span>
-                        </button>
+                        </a>
                     </li>
                     <li>
-                        <a href="gerenciarVendas.html" class="nav-button">
+                        <button class="nav-button active">
                             <span>💲</span> <span class="nav-text-label">Gerenciar Vendas</span>
-                        </a>
+                        </button>
                     </li>
                     <li>
                         <button class="nav-button">
@@ -89,29 +89,27 @@
                 <table style="width: 100%; border-collapse: collapse; color: #fff;">
                     <thead>
                         <tr style="background-color: #252525;">
-                            <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #333;">NOME</th>
-                            <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #333;">DESCRIÇÃO</th>
-                            <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #333;">LANÇAMENTO</th>
-                            <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #333;">PREÇO</th>
-                            <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #333;">CAPA</th>
-                            <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #333;">ESTÚDIO</th>
+                            <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #333;">DATA</th>
+                            <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #333;">JOGO</th>
+                            <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #333;">CLIENTE</th>
+                            <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #333;">VALOR</th>
                             <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #333;">EDITAR</th>
                             <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #333;">EXCLUIR</th>
                         </tr>
                     </thead>
-                    <tbody id="tabela-jogos">
+                    <tbody id="tabela-vendas">
                     </tbody>
                 </table>
             </section>
 
             <footer class="management-actions" style="padding: 20px; display: flex; justify-content: space-between; align-items: center; margin-top: auto; gap: 15px;">
-                <button class="btn-action-yellow" style="flex-grow: 1;" onclick="window.location.href='cadastrarJogo.html'">Adicionar novo jogo</button>
+                <button class="btn-action-yellow" style="flex-grow: 1;" onclick="window.location.href='cadastrarVenda.html'">Adicionar nova venda</button>
                 <button class="btn-action-yellow" style="flex-grow: 1;" onclick="window.location.href='home.html'">Sair</button>
             </footer>
 
         </main>
     </div>
 
-    <script src="../js/listarJogos.js"></script>
+    <script src="../js/listarVendas.js"></script>
 </body>
 </html>

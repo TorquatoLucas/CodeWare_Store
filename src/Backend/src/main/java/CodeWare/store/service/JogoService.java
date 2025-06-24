@@ -64,4 +64,9 @@ public class JogoService {
         return jogoRepository.save(jogo);
     }
 
+    @Transactional
+    public List<Jogo> buscarJogos(String nome){
+        return jogoRepository.findByNomeStartingWithIgnoreCase(nome);
+    }
+
 }
