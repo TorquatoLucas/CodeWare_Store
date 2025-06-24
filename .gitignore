@@ -43,3 +43,6 @@ build/
 
 # Testes
 coverage/
+
+/uploads/
+
