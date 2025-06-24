@@ -1,27 +1,25 @@
-const url = "http://localhost:8080/jogo"; // URL da sua API
+const url = "http://localhost:8080/venda"; // URL da sua API
 
 // Função para exibir os jogos na tabela
-function show(jogos) {
-    const tableBody = document.getElementById("tabela-jogos");
+function show(vendas) {
+    const tableBody = document.getElementById("tabela-vendas");
     if (!tableBody) {
-        console.error("Elemento <tbody> com ID 'tabela-jogos' não encontrado no HTML.");
+        console.error("Elemento <tbody> com ID 'tabela-vendas' não encontrado no HTML.");
         return;
     }
 
     let rowsHtml = ""; // Inicializa a string para as linhas da tabela
 
-    if (jogos && jogos.length > 0) {
-        for (let jogo of jogos) {
+    if (vendas && vendas.length > 0) {
+        for (let venda of vendas) {
             // Adapte as propriedades (jogo.nome, jogo.mes, etc.)
             // de acordo com o que a sua API realmente retorna para cada jogo.
             rowsHtml += `
-                <tr style="background-color: #252525;" data-id="${jogo.id}">
-                    <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #333;">${jogo.nome || 'N/A'}</th>
-                    <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #333;">${jogo.descricao || 'N/A'}</th>
-                    <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #333;">${jogo.lancamento || 'N/A'}</th>
-                    <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #333;">${jogo.preco != null ? (jogo.preco / 100).toFixed(2) : 'N/A'}</th>
-                    <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #333;">${jogo.capa_diretorio || 'N/A'}</th>
-                    <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #333;">${jogo.estudio || 'N/A'}</th>
+                <tr style="background-color: #252525;" data-id="${venda.id}">
+                    <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #333;">${venda.data || 'N/A'}</th>
+                    <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #333;">${venda.jogo.nome || 'N/A'}</th>
+                    <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #333;">${venda.cliente.nome || 'N/A'}</th>
+                    <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #333;">${venda.valor != null ? (venda.valor / 100).toFixed(2) : 'N/A'}</th>
                     <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #333;">
                         <span class="btn-editar" style="cursor: pointer;" title="Editar">✏️</span>
                     </th>
@@ -35,7 +33,7 @@ function show(jogos) {
         // Mensagem caso não haja jogos ou ocorra um erro
         const headerRow = tableBody.previousElementSibling.rows[0]; // Pega a linha de cabeçalho (thead > tr)
         const numberOfColumns = headerRow ? headerRow.cells.length : 6; // Default to 6 if header not found
-        rowsHtml = `<tr><td colspan="${numberOfColumns}" style="padding: 10px 15px; text-align: center;">Nenhum jogo encontrado.</td></tr>`;
+        rowsHtml = `<tr><td colspan="${numberOfColumns}" style="padding: 10px 15px; text-align: center;">Nenhuma venda encontrada.</td></tr>`;
     }
 
     tableBody.innerHTML = rowsHtml; // Insere as linhas geradas no corpo da tabela
@@ -71,7 +69,7 @@ async function getTasks() {
         show(data);
 
     } catch (error) {
-        console.error("Falha ao buscar jogos (erro de rede ou outros):", error);
+        console.error("Falha ao buscar vendas (erro de rede ou outros):", error);
         show([]); // Mostra tabela vazia ou mensagem de erro
     }
 }
@@ -84,7 +82,7 @@ async function getTasks() {
 document.addEventListener("DOMContentLoaded", function () {
     getTasks();
 
-    const tableBody = document.getElementById("tabela-jogos");
+    const tableBody = document.getElementById("tabela-vendas");
 
     tableBody.addEventListener("click", function (event) {
     const row = event.target.closest("tr");
@@ -99,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Verifica se clicou no botão editar
     if (event.target.closest(".btn-editar")) {
-        window.location.href = `editarJogo.html?id=${id}`;
+        window.location.href = `editarVenda.html?id=${id}`;
     }
     });
 
@@ -142,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
 window.getTasks = getTasks; // Torna global para ser chamada de excluirJogo.js
 
 async function excluirJogo(id) {
-    const confirmar = confirm("Deseja realmente excluir este jogo?");
+    const confirmar = confirm("Deseja realmente excluir esta venda?");
     if (!confirmar) return;
 
     try {
@@ -151,14 +149,14 @@ async function excluirJogo(id) {
         });
 
         if (response.ok) {
-            alert("Jogo excluído com sucesso.");
+            alert("Venda excluído com sucesso.");
             getTasks(); // Atualiza a lista após exclusão
         } else {
             const erro = await response.text();
-            alert("Erro ao excluir jogo: " + erro);
+            alert("Erro ao excluir venda: " + erro);
         }
     } catch (error) {
-        console.error("Erro ao excluir jogo:", error);
+        console.error("Erro ao excluir venda:", error);
         alert("Erro de rede ao tentar excluir.");
     }
 }
