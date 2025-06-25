@@ -1,6 +1,6 @@
 package CodeWare.store.service;
 
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.Assertions;
@@ -17,7 +17,7 @@ import CodeWare.store.model.Jogo;
 import CodeWare.store.repository.JogoRepository;
 
 @ExtendWith(MockitoExtension.class)
-public class JogoServicesTest {
+public class JogoServiceTest {
 
     @InjectMocks
     private JogoService jogoService;
@@ -29,7 +29,9 @@ public class JogoServicesTest {
     @DisplayName("Retorna uma lista de jogos.")
     void testListJogos() {
         Jogo jogo = new Jogo();
-        Mockito.when(jogoRepository.findAll()).thenReturn(Collections.singletonList(jogo));
+        List<Jogo> lista = new ArrayList<>();
+        lista.add(jogo);
+        Mockito.when(jogoRepository.findAll()).thenReturn(lista);
         List<Jogo> jogos = jogoService.listJogos();
         Assertions.assertEquals(1, jogos.size());
 
