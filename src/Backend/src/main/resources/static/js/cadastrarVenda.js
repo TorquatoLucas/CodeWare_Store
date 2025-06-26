@@ -32,9 +32,8 @@ const baseUrl = "http://localhost:8080/venda";
         const data = document.getElementById("data").value;
         const jogoId = parseInt(document.getElementById("jogoId").value);
         const clienteId = parseInt(document.getElementById("clienteId").value);
-        const valor = parseInt(document.getElementById("valor").value);
 
-        const novaVenda = { data, jogoId, clienteId, valor};
+        const novaVenda = { data, jogoId, clienteId};
         postVenda(novaVenda);
       });
 
