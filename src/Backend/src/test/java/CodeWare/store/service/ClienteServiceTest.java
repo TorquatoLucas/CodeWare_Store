@@ -30,12 +30,15 @@ public class ClienteServiceTest {
     @DisplayName("Verifica se o cliente está sendo salvo.")
     public void testSaveCliente() {
         ClienteDto clienteDto = new ClienteDto(null, "12345678901", "guilhermefreire@gmail.com", "Gui", "gui123");
+        ClienteDto clienteDtoAux = new ClienteDto(null, "12345678902", "guilhermefreire@gmail.com", "Gui", "gui123");
+
         Cliente cliente = clienteMapper.toCliente(clienteDto);
         
-        Mockito.when(clienteMapper.toCliente(clienteDto)).thenReturn(cliente);
+        
+        Mockito.when(clienteMapper.toCliente(clienteDtoAux)).thenReturn(cliente);
         Mockito.when(clienteRepository.save(cliente)).thenReturn(cliente);
 
-        Cliente cliente1 = clienteService.saveCliente(clienteDto);
+        Cliente cliente1 = clienteService.saveCliente(clienteDtoAux);
         Assertions.assertEquals(cliente, cliente1);
     }
 }

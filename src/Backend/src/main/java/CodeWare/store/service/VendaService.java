@@ -54,21 +54,21 @@ public class VendaService {
         return vendaRepository.findVendaByClienteId(id);
     }
 
-    @Transactional
-    public Venda updateJogo(Integer id, VendaDto vendaDto) {
-        // Verifica se a venda existe
+   @Transactional
+    public Venda updateVenda(Integer id, VendaDto vendaDto) {
         Venda venda = vendaRepository.findById(id)
-            .orElseThrow(() -> new IllegalArgumentException("Venda com ID " + id + " não encontrado"));
+            .orElseThrow(() -> new IllegalArgumentException("Venda com ID " + id + " não encontrada"));
 
-        // Atualiza os campos
         venda.setData(vendaDto.data());
-        venda.setCliente(clienteRepository.findById(id).get());
-        venda.setJogo(jogoRepository.findById(id).get());
+        venda.setCliente(clienteRepository.findById(vendaDto.clienteId())
+            .orElseThrow(() -> new IllegalArgumentException("Cliente com ID " + vendaDto.clienteId() + " não encontrado")));
+        venda.setJogo(jogoRepository.findById(vendaDto.jogoId())
+            .orElseThrow(() -> new IllegalArgumentException("Jogo com ID " + vendaDto.jogoId() + " não encontrado")));
         venda.setValor(vendaDto.valor());
 
-        // Salva e retorna a venda atualizada
         return vendaRepository.save(venda);
-    }
+}
+
 
     @Transactional
     public boolean deleteVenda(Integer id){

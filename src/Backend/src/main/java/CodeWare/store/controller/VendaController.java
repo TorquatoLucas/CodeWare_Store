@@ -46,7 +46,7 @@ public class VendaController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Venda> editVenda(@PathVariable Integer id, @Valid @RequestBody VendaDto vendaDto){
-        return ResponseEntity.ok(vendaService.updateJogo(id, vendaDto));
+        return ResponseEntity.ok(vendaService.updateVenda(id, vendaDto));
     }
 
     @DeleteMapping("/{id}")

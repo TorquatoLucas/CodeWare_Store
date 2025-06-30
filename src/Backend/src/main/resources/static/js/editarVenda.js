@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         return;
     }
 
+    document.getElementById("venda-id").value = id;
+
     try {
         const response = await fetch(`${url}/${id}`);
         const venda = await response.json();
